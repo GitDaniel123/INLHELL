@@ -1,0 +1,38 @@
+﻿@model IEnumerable<FRONTEND.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+
+
+    <div class="row row-cols-1 row-cols-lg-4 g-4 py-2 container m-auto" >
+
+               @foreach (var item in Model)
+                   {
+
+                            <div class="col m-3 card">
+                                <a asp-action="Details" asp-route-id="@item.Id">
+                                    <img src="@Html.DisplayFor(modelItem => item.Image)" class="card-img-top " alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                                        <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                                        <div class="d-flex justify-content-between align-items-center ">
+                                            <h4 class="text-danger price pt-2">@Html.DisplayFor(modelItem => item.Price)</h4>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+    
+
+                    }
+
+    </div>

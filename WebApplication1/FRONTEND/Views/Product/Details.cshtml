@@ -1,0 +1,33 @@
+﻿@model FRONTEND.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div>
+    <h4>Product  Details</h4>
+    <hr />
+
+            <div class="card" style="width: 18rem;">
+                <img src="@Html.DisplayFor(model => model.Image)" class="card-img-top h-100 " alt="...">
+                <div class="">
+                    <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
+                    <p class="card-text">@Html.DisplayFor(model => model.Description)</p>
+                    <p class="text-danger price pt-2">@Html.DisplayFor(model => model.Price) SEK</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+    
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
